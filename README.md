@@ -34,7 +34,7 @@ Example:
   "2":  { "gametitle": "Mario", "stars": 4 }
 }
 ```
-###CSV
+### CSV
 
 - Must contain a header row
 - Must include an id column (position does not matter)
@@ -47,18 +47,19 @@ Zelda,5,10
 Mario,4,2
 ```
 
-##Commands
-###ping
+## Commands
+
+### ping
 
 Sanity check command.
-```python
+```bash
 python src/tool.py ping
 ```
 
 ###to-csv
 
 Convert JSON → CSV.
-```python
+```bash
 python src/tool.py to-csv input.json output.csv
 ```
 
@@ -73,10 +74,10 @@ Notes:
 - Row order follows the order of keys in the input JSON file
 - Output CSV always places id as the first column
 
-##to-json
+## to-json
 
 Convert CSV → JSON.
-```python
+```bash
 python src/tool.py to-json input.csv output.json
 ```
 
@@ -93,10 +94,10 @@ Notes:
 - JSON object key order follows CSV row order
 - Without --infer-types, all CSV values are treated as strings
 
-##verify
+## verify
 
 Verify round-trip integrity:
-```python
+```bash
 python src/tool.py verify input.json
 ```
 
@@ -118,7 +119,7 @@ PASS → lossless round-trip for the current schema
 
 FAIL → mismatch detected (types, missing fields, or values)
 
-##Ordering Behavior
+## Ordering Behavior
 
 Input order is preserved
 
@@ -128,11 +129,12 @@ CSV → JSON: keys follow CSV row order
 
 The tool does not sort records.
 
-##Error Handling & Exit Codes
-Exit Code	Meaning
-0	Success
-1	Verification failed (data mismatch)
-2	Invalid input, I/O error, or conversion failure
+## Error Handling & Exit Codes
+| Exit Code | Meaning |
+|----------:|---------|
+| 0 | Success |
+| 1 | Verification failed (data mismatch) |
+| 2 | Invalid input, I/O error, or conversion failure |
 
 Common handled error cases:
 
@@ -148,7 +150,7 @@ Invalid JSON
 
 Non-UTF-8 input files
 
-##Encoding
+## Encoding
 
 Input files are expected to be UTF-8
 
@@ -156,7 +158,8 @@ If decoding fails, the tool exits with a clear error message
 
 No automatic encoding guessing is performed
 
-##Project Structure
+## Project Structure
+```
 jsoncsvconverter/
 ├── LICENSE
 ├── README.md
@@ -167,9 +170,9 @@ jsoncsvconverter/
 ├── src/
 │   └── tool.py
 └── tests/
+```
 
-
-##Design Notes
+## Design Notes
 
 CSV is inherently untyped; type restoration is intentionally opt-in
 
