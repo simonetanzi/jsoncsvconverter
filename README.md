@@ -56,7 +56,7 @@ Sanity check command.
 python src/tool.py ping
 ```
 
-###to-csv
+### to-csv
 
 Convert JSON → CSV.
 ```bash
