@@ -101,7 +101,7 @@ Notes:
 - Row order follows the order of keys in the input JSON file
 - Output CSV always places id as the first column
 
-## to-json
+### to-json
 
 Convert CSV → JSON.
 ```bash
@@ -121,7 +121,7 @@ Notes:
 - JSON object key order follows CSV row order
 - Without --infer-types, all CSV values are treated as strings
 
-## verify
+### verify
 
 Verify round-trip integrity:
 ```bash
