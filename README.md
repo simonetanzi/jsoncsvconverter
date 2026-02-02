@@ -18,6 +18,27 @@ This tool is designed as a **non-interactive CLI utility**: it takes all input a
 
 ---
 
+## Quick Start
+
+Run the following commands from the repository root. Requires Python 3.x; no third-party dependencies.
+
+Sanity check that the CLI is available:
+```bash
+python src/tool.py ping
+```
+
+Convert the provided example JSON file to CSV:
+```bash
+python src/tool.py to-csv data/example.json outputs/example.csv --force
+```
+
+Verify round-trip integrity of the example data:
+```bash
+python src/tool.py verify data/example.json --infer-types
+```
+
+---
+
 ## Supported Input Formats
 
 ### JSON
