@@ -1,0 +1,14 @@
+{
+  "1": {
+    "name": "Zelda",
+    "stars": 5,
+    "price": 79.90,
+    "featured": true
+  },
+  "2": {
+    "name": "Mario",
+    "stars": 4,
+    "price": 50.99,
+    "featured": false
+  }
+}
