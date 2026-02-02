@@ -33,7 +33,7 @@ Example:
   "10": { "gametitle": "Zelda", "stars": 5 },
   "2":  { "gametitle": "Mario", "stars": 4 }
 }
-
+```
 ###CSV
 
 - Must contain a header row
@@ -41,23 +41,26 @@ Example:
 - All values are read as strings unless type inference is enabled
 
 Example:
+```csv
 gametitle,stars,id
 Zelda,5,10
 Mario,4,2
+```
 
 ##Commands
 ###ping
 
 Sanity check command.
-
+```python
 python src/tool.py ping
+```
 
 ###to-csv
 
 Convert JSON → CSV.
-
+```python
 python src/tool.py to-csv input.json output.csv
-
+```
 
 Options:
 
@@ -73,9 +76,9 @@ Notes:
 ##to-json
 
 Convert CSV → JSON.
-
+```python
 python src/tool.py to-json input.csv output.json
-
+```
 
 Options:
 
@@ -93,9 +96,9 @@ Notes:
 ##verify
 
 Verify round-trip integrity:
-
+```python
 python src/tool.py verify input.json
-
+```
 
 This performs:
 
@@ -155,14 +158,16 @@ No automatic encoding guessing is performed
 
 ##Project Structure
 jsoncsvconverter/
-├── data/        # sample or user-provided inputs
-├── docs/        # notes and documentation
-├── outputs/     # generated files
-├── src/
-│   └── tool.py  # CLI entry point
-├── tests/       # test suite (planned)
+├── LICENSE
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── data/
+├── docs/
+├── outputs/
+├── src/
+│   └── tool.py
+└── tests/
+
 
 ##Design Notes
 
