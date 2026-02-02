@@ -39,6 +39,12 @@ python src/tool.py verify data/example.json --infer-types
 
 ---
 
+## Design Goals
+
+This tool exists to make JSON ↔ CSV conversion explicit and predictable. JSON is structured and typed; CSV is flat and untyped, so round-tripping can change data types and interpretation. Instead of silently “fixing” these differences, the tool exposes them: verify checks JSON → CSV → JSON integrity in memory, and --infer-types provides an opt-in way to restore common scalar types when converting from CSV. Record order is preserved and errors are reported with clear messages and exit codes.
+
+---
+
 ## Supported Input Formats
 
 ### JSON
